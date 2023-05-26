@@ -1,0 +1,235 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "CaskaydiaCove Nerd Font Mono";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background: rgba(17, 17, 27, .10);
+}
+
+tooltip {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#workspaces button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 7px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #cdd6f4;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.active {
+    background: #a6adc8;
+    color: #313244;
+    margin-left: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 2px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: #f5c2e7;
+    color: #313244;
+    padding-left: 2px;
+    padding-right: 2px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#custom-arch_icon,
+#cpu,
+#memory,
+#disk,
+#custom-power,
+#clock,
+#custom-weather,
+#workspaces,
+#window,
+#custom-updates,
+#network,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery,
+#temperature,
+#custom-power_profile,
+#custom-wallchange,
+#custom-mode,
+#custom-cliphist,
+#tray {
+    color: #cdd6f4;
+    background: #11111b;
+    opacity: 1;
+    padding: 0px;
+    margin: 3px 0px 3px 0px;
+}
+
+
+/* resource monitor block */
+
+#custom-arch_icon {
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-left: 10px;
+    margin-right: 6px;
+}
+
+#cpu {
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 6px;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+
+#memory {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#disk {
+    border-radius: 0px 10px 10px 0px;
+    border-left-width: 0px;
+    padding-left: 4px;
+    padding-right: 12px;
+    margin-right: 6px;
+}
+
+
+/* date time weather block */
+
+#clock {
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 6px;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+
+#custom-weather {
+    border-radius: 0px 10px 10px 0px;
+    border-left-width: 0px;
+    padding-left: 4px;
+    padding-right: 12px;
+    margin-right: 6px;
+}
+
+
+/* workspace window block */
+
+#workspaces {
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 6px;
+}
+
+#window {
+    border-radius: 10px 10px 10px 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/* control center block */
+
+#custom-updates {
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 6px;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+
+#network {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#bluetooth {
+    padding-left: 4px;
+    padding-right: 4px;
+} 
+
+#pulseaudio {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#pulseaudio.microphone {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#temperature {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#temperature.critical {
+    color: #e92d4d;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#battery {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#custom-power_profile {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#custom-wallchange {
+    border-radius: 0px 10px 10px 0px;
+    padding-left: 4px;
+    padding-right: 12px;
+    margin-right: 6px;
+}
+
+
+/* system tray block */
+
+#custom-mode {
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 6px;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+
+#custom-cliphist {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#tray {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#custom-power {
+    border-radius: 0px 10px 10px 0px;
+    padding-left: 4px;
+    padding-right: 12px;
+    margin-right: 10px;
+}
