@@ -1,2 +1,2 @@
-1|Catppuccin-Mocha|~/.config/swww/Catppuccin-Mocha/edger_lucy_neon.jpg
-0|Catppuccin-Latte|~/.config/swww/Catppuccin-Latte/raiden_shogun.jpg
+0|Catppuccin-Mocha|~/.config/swww/Catppuccin-Mocha/dark_purple_kimono.png
+1|Catppuccin-Latte|~/.config/swww/Catppuccin-Latte/jormungandr.jpg

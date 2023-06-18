@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "mod": "dock",
     "height": 28,
     "exclusive": true,
@@ -8,7 +8,7 @@
     "gtk-layer-shell": true,
     "modules-left": ["custom/arch_icon","cpu","memory","disk","clock","custom/weather","wlr/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/updates","network","bluetooth","pulseaudio","pulseaudio#microphone","backlight","temperature","battery","custom/power_profile","custom/wallchange","custom/mode","custom/cliphist","tray","custom/power"],
+    "modules-right": ["custom/updates","hyprland/language","network","bluetooth","pulseaudio","pulseaudio#microphone","backlight","temperature","battery","custom/power_profile","custom/wallchange","custom/mode","custom/cliphist","tray","custom/power"],
 
 
 // center modules //
@@ -34,7 +34,6 @@
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": true,
-        "max-length":150,
         "rewrite": {
             "tittu@kryptonite:(.*)": " $1",
             "(.*) — Mozilla Firefox": "󰈹 $1",
@@ -43,7 +42,9 @@
             "(.*)Visual Studio Code": "󰨞 Code",
             "(.*) — Dolphin": "󰉋 $1",
             "(.*)Spotify": "󰓇 Spotify",
-            "(.*)Steam": "󰓓 Steam"
+            "(.*)Steam": "󰓓 Steam",
+	        "(.*) - Google Chrome": "󰊯 $1",
+            "(.*) - Discord": "󰙯 $1"
           }
     },
 
@@ -65,7 +66,7 @@
         "interval": 30,
         "format": "󰾆 {percentage}%",
         "format-alt": "󰾅 {used}GB",
-        "max-length": 10,
+        // "max-length": 10,
         "tooltip": true,
         "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
     },
@@ -92,7 +93,7 @@
         "format": "󰮯 {}",
         "exec": "~/.config/hypr/scripts/systemupdate.sh",
         "on-click": "~/.config/hypr/scripts/systemupdate.sh up",
-        "interval": 86400, // once every day
+        "interval": 300, // once every 5 mins
         "tooltip": true
     },
     
@@ -161,6 +162,7 @@
         "exec": "echo ; echo 󰟡 switch mode",
         "on-click": "~/.config/hypr/scripts/themeswitch.sh -n",
         "on-click-right": "~/.config/hypr/scripts/themeswitch.sh -p",
+        "on-click-middle": "~/.config/hypr/scripts/themeselect.sh",
         "interval" : 86400, // once every day
         "tooltip": true
     },
@@ -168,9 +170,9 @@
     "custom/cliphist": {
         "format": "{}",
         "exec": "~/.config/hypr/scripts/cliphist.sh t",
-        "on-click": "~/.config/hypr/scripts/cliphist.sh c",
-        //"on-click-right": "~/.config/hypr/scripts/cliphist.sh d",
-        //"on-click-middle": "~/.config/hypr/scripts/cliphist.sh w",
+        "on-double-click": "~/.config/hypr/scripts/cliphist.sh c",
+        "on-click-right": "~/.config/hypr/scripts/cliphist.sh d",
+        "on-click-middle": "~/.config/hypr/scripts/cliphist.sh w",
         "interval" : 86400, // once every day
         "tooltip": true
     },
@@ -182,7 +184,7 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "wlogout -b 2 -c 0 -r 0 -L 930 -R 930 -T 300 -B 300 --protocol layer-shell",
+        "on-click": "sh -c '(sleep 0.5s; wlogout -b 6 -c 0 -r 0 -L 300 -R 300 -T 300 -B 300 --protocol layer-shell)' & disown",
         "tooltip": false
     },
 
@@ -230,11 +232,17 @@
 
     "custom/power_profile": {
         //shows the current power profile and switches to next on click
-        "exec": "/home/dangdoan2003/.config/waybar/scripts/power_profile",
+        "exec": "~/.config/waybar/scripts/power_profile",
         "return-type": "json",
         "interval": 20,
         "format": "{}",
-        "on-click": "/home/dangdoan2003/.config/waybar/scripts/power_profile next",
+        "on-click": "~/.config/waybar/scripts/power_profile next",
         "signal": 8
-        }  
+        },
+    "hyprland/language": {
+        "interval": 20,
+        "format": " {shortDescription} {variant}",
+        "on-click": "hyprctl switchxkblayout asus-keyboard-2 next ; hyprctl switchxkblayout sonix-usb-device next",
+        "signal" : 8
+    }
 }
