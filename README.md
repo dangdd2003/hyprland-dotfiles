@@ -10,7 +10,7 @@ After minimal archlinux installation
 
 ```shell
 pacman -Sy git
-git clone https://github.com/dangdd2003/hyprdots ~/Dots (just a fork from main repo above)
+git clone https://github.com/dangdd2003/hyprdots ~/Dots
 cd ~/Dots/Scripts
 ./install.sh
 ```
